@@ -1,0 +1,21 @@
+table {
+    border-collapse: collapse;
+    margin-top:15px ;
+}
+
+table, th, td {
+    border: 1px black solid;
+}
+
+th, td{
+    padding: 0 10px;
+    text-align: center;
+}
+
+label{
+    display: block;
+}
+
+button{
+    margin: 5px;
+}

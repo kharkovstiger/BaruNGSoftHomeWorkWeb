@@ -1,0 +1,12 @@
+<div ng-controller="orderCtrl" ng-cloak>
+
+    <button go-click="/customer">Back</button>
+
+    <label>Date: <input ng-model="order.date" placeholder="yyyy-MM-dd'T'HH:mm:ss" title="yyyy-MM-dd'T'HH:mm:ss"></label>
+    <label>Product Description: <input ng-model="order.description"></label>
+    <label>Price per Unit: <input ng-model="order.price"></label>
+    <label>Quantity: <input type="number" ng-model="order.quantity"></label>
+
+    <button ng-click="save()">Save</button>
+
+</div>

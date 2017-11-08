@@ -1,0 +1,19 @@
+<div ng-controller="mainCtrl" ng-cloak>
+    <table>
+        <caption>List of Customers</caption>
+        <tr>
+            <th>Email</th>
+            <th>Full Name</th>
+            <th>Number of Orders</th>
+            <th>Link to customer</th>
+        </tr>
+        <tr ng-repeat="customer in customers">
+            <td>{{customer.email}}</td>
+            <td>{{customer.firstName+" "+customer.lastName}}</td>
+            <td></td>
+            <td><a href="" ng-click="toCustomer(customer.id)">link</a></td>
+        </tr>
+    </table>
+
+    <button ng-click="toCustomer(null)">Add Customer</button>
+</div>

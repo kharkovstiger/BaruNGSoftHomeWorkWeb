@@ -1,0 +1,30 @@
+<div ng-controller="customerCtrl" ng-cloak>
+
+    <button go-click="/">Back</button>
+
+    <label>Email: <input type="email" ng-model="customer.email"></label>
+    <label>First Name: <input ng-model="customer.firstName"></label>
+    <label>Last Name: <input ng-model="customer.lastName"></label>
+    <label>Age: <input type="number" ng-model="customer.age"></label>
+
+    <button ng-click="save()">Save</button>
+
+    <table>
+        <caption>List of Customer's Orders</caption>
+        <tr>
+            <th>Date</th>
+            <th>Product Description</th>
+            <th>Total Order</th>
+            <th>Link to Order</th>
+        </tr>
+        <tr ng-repeat="order in orders">
+            <td>{{order.date}}</td>
+            <!--<td>{{order.date.dayOfMonth+'/'+order.date.monthValue+'/'+order.date.year}}</td>-->
+            <td>{{order.description}}</td>
+            <td>{{order.price*order.quantity}}</td>
+            <td><a href="" ng-click="toOrder(order.id)">link</a></td>
+        </tr>
+    </table>
+
+    <button ng-click="toOrder(null)">Add Order</button>
+</div>
