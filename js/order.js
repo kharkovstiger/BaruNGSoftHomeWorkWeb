@@ -28,18 +28,23 @@ app.controller('orderCtrl', ['$scope', '$http', '$location','orderId', 'customer
                         list[i].classList.remove('wrong');
                     }
                     var el;
+                    $scope.err="";
                     switch (response.data){
                         case "Wrong description":
                             el=document.getElementById("description");
+                            $scope.err="description";
                             break;
                         case "Wrong price":
                             el=document.getElementById("price");
+                            $scope.err="price";
                             break;
                         case "Wrong quantity":
                             el=document.getElementById("quantity");
+                            $scope.err="quantity";
                             break;
                         case "Wrong date":
                             el=document.getElementById("date");
+                            $scope.err="date";
                             break;
                     }
                     el.focus();

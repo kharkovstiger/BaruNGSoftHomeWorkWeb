@@ -2,10 +2,10 @@
 
     <button go-click="/">Back</button>
 
-    <label>Email: <input id="email" type="email" ng-model="customer.email"></label>
-    <label>First Name: <input id="firstName" ng-model="customer.firstName"></label>
-    <label>Last Name: <input id="lastName" ng-model="customer.lastName"></label>
-    <label>Age: <input id="age" type="number" ng-model="customer.age"></label>
+    <label>Email: <input id="email" type="email" ng-model="customer.email"><span ng-show="err=='email'">Wrong input</span></label>
+    <label>First Name: <input id="firstName" ng-model="customer.firstName"><span ng-show="err=='firstName'">Wrong input</span></label>
+    <label>Last Name: <input id="lastName" ng-model="customer.lastName"><span ng-show="err=='lastName'">Wrong input</span></label>
+    <label>Age: <input id="age" type="number" ng-model="customer.age"><span ng-show="err=='age'">Wrong input</span></label>
 
     <button ng-click="save()">Save</button>
 

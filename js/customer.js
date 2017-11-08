@@ -41,18 +41,23 @@ app.controller('customerCtrl', ['$scope', '$http', '$location', 'customerId', 'o
                     list[i].classList.remove('wrong');
                 }
                 var el;
+                $scope.err="";
                 switch (response.data){
                     case "Wrong Email":
                         el=document.getElementById('email');
+                        $scope.err="email";
                         break;
                     case "Wrong first name":
                         el=document.getElementById("firstName");
+                        $scope.err="firstName";
                         break;
                     case "Wrong last name":
                         el=document.getElementById("lastName");
+                        $scope.err="lastName";
                         break;
                     case "Wrong age":
                         el=document.getElementById("age");
+                        $scope.err="age";
                         break;
                 }
                 el.focus();

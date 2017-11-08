@@ -2,10 +2,11 @@
 
     <button go-click="/customer">Back</button>
 
-    <label>Date: <input id="date" ng-model="order.date" placeholder="yyyy-MM-dd'T'HH:mm:ss" title="yyyy-MM-dd'T'HH:mm:ss"></label>
-    <label>Product Description: <input id="description" ng-model="order.description"></label>
-    <label>Price per Unit: <input id="price" ng-model="order.price"></label>
-    <label>Quantity: <input id="quantity" type="number" ng-model="order.quantity"></label>
+    <label>Date: <input id="date" ng-model="order.date" placeholder="yyyy-MM-dd'T'HH:mm:ss" title="yyyy-MM-dd'T'HH:mm:ss">
+        <span ng-show="err=='date'">Wrong input</span></label>
+    <label>Product Description: <input id="description" ng-model="order.description"><span ng-show="err=='description'">Wrong input</span></label>
+    <label>Price per Unit: <input id="price" ng-model="order.price"><span ng-show="err=='price'">Wrong input</span></label>
+    <label>Quantity: <input id="quantity" type="number" ng-model="order.quantity"><span ng-show="err=='quantity'">Wrong input</span></label>
 
     <button ng-click="save()">Save</button>
 
