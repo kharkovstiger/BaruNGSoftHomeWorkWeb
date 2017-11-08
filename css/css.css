@@ -19,3 +19,7 @@ label{
 button{
     margin: 5px;
 }
+
+.wrong{
+    border: 1px solid red;
+}

@@ -3,11 +3,12 @@ app.controller('customerCtrl', ['$scope', '$http', '$location', 'customerId', 'o
 
     var baseURL='https://ngsoft.herokuapp.com/api';
     $scope.orders=[];
+    $scope.id=customerId.get();
 
     if (customerId.get()!==null) {
         $http.get(baseURL + "/customer/" + customerId.get()).then(
             function (response) {
-                // console.log(response);
+                console.log(response);
                 $scope.customer = response.data;
             },
             function (response) {
@@ -32,6 +33,30 @@ app.controller('customerCtrl', ['$scope', '$http', '$location', 'customerId', 'o
                 // console.log(response);
                 $scope.customer=response.data;
                 customerId.set($scope.customer.id);
+                $scope.id=customerId.get();
+            },
+            function (response) {
+                var list=document.getElementsByClassName('wrong');
+                for (var i=0;i<list.length;i++){
+                    list[i].classList.remove('wrong');
+                }
+                var el;
+                switch (response.data){
+                    case "Wrong Email":
+                        el=document.getElementById('email');
+                        break;
+                    case "Wrong first name":
+                        el=document.getElementById("firstName");
+                        break;
+                    case "Wrong last name":
+                        el=document.getElementById("lastName");
+                        break;
+                    case "Wrong age":
+                        el=document.getElementById("age");
+                        break;
+                }
+                el.focus();
+                el.classList.add('wrong');
             }
         );
     };

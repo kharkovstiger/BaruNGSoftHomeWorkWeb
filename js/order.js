@@ -22,6 +22,28 @@ app.controller('orderCtrl', ['$scope', '$http', '$location','orderId', 'customer
                     // console.log(response);
                     $scope.order=response.data;
                     orderId.set($scope.order.id);
+                },
+                function (response) {var list=document.getElementsByClassName('wrong');
+                    for (var i=0;i<list.length;i++){
+                        list[i].classList.remove('wrong');
+                    }
+                    var el;
+                    switch (response.data){
+                        case "Wrong description":
+                            el=document.getElementById("description");
+                            break;
+                        case "Wrong price":
+                            el=document.getElementById("price");
+                            break;
+                        case "Wrong quantity":
+                            el=document.getElementById("quantity");
+                            break;
+                        case "Wrong date":
+                            el=document.getElementById("date");
+                            break;
+                    }
+                    el.focus();
+                    el.classList.add('wrong');
                 }
             );
         };

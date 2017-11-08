@@ -2,14 +2,14 @@
 
     <button go-click="/">Back</button>
 
-    <label>Email: <input type="email" ng-model="customer.email"></label>
-    <label>First Name: <input ng-model="customer.firstName"></label>
-    <label>Last Name: <input ng-model="customer.lastName"></label>
-    <label>Age: <input type="number" ng-model="customer.age"></label>
+    <label>Email: <input id="email" type="email" ng-model="customer.email"></label>
+    <label>First Name: <input id="firstName" ng-model="customer.firstName"></label>
+    <label>Last Name: <input id="lastName" ng-model="customer.lastName"></label>
+    <label>Age: <input id="age" type="number" ng-model="customer.age"></label>
 
     <button ng-click="save()">Save</button>
 
-    <table>
+    <table ng-show="id!==null">
         <caption>List of Customer's Orders</caption>
         <tr>
             <th>Date</th>
