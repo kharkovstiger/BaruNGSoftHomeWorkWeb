@@ -10,7 +10,7 @@
         <tr ng-repeat="customer in customers">
             <td>{{customer.email}}</td>
             <td>{{customer.firstName+" "+customer.lastName}}</td>
-            <td></td>
+            <td>{{customer.numberOfOrders}}</td>
             <td><a href="" ng-click="toCustomer(customer.id)">link</a></td>
         </tr>
     </table>
